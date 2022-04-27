@@ -1,5 +1,7 @@
 void get_path(vector<ll> &vect, vector<vector<string>> &path, ll &home)
 {
+	cout<<endl;
+	cout<<"PATH = ";
 	vect.pb(home);
 	cout<<path[home][vect[0]];
 	ll prev = vect[0];
@@ -11,4 +13,5 @@ void get_path(vector<ll> &vect, vector<vector<string>> &path, ll &home)
 		while(j<s.length())
 			cout<<s[j++];
 	}
+	cout<<endl;
 }

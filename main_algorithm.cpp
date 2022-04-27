@@ -70,6 +70,31 @@ int main()
     cout<<endl;
     if(weather)
     {
+        cout<<"THE WEATHER CONDITIONS ARE SEVERE.\nWOULD YOU LIKE TO CONTINUE?\nPress 0 for No\nPress 1 for Yes\n";
+        bool forward;
+        cin>>forward;
+        if(!forward) 
+            return 0;
+        cout<<"WE WILL HIGHLY RECOMMEND YOU TO CANCEL THE TRIPS TO THESE STORES DUE TO THE EXTREME WEATHER CONDITIONS.\n";
+        vector<pair<ll,ll>> stores;
+        for(auto itr: price)
+                stores.pb({distance[home][itr.ff], itr.ff});
+        sort(all(stores));
+        vector<ll> temp;
+        while(stores.size() && stores.size()>(price.size()+1)/2 && stores.back().ff>5)
+        {
+            temp.pb(stores.back().ss);
+            stores.pop_back();
+        }
+        for(ll i=0; i<stores.size(); i++) 
+            cout<<"STORE "<<stores[i].ss<<endl;
+        cout<<"Press 1 to Cancel these stores\nPress 0 to not canel these stores\n";
+        cin>>forward;
+        if(forward)
+        {
+            for(ll i=0; i<temp.size(); i++)
+                price.erase(temp[i]);
+        }
     	mst(adj, price, distance, home);
         vector<ll> order;
         preorder(adj, home, -1, order);
@@ -116,7 +141,6 @@ int main()
             get_path(order, path, home);
     	}
     }
-    timetaken;
     return 0;
 }
 /*

@@ -1,0 +1,25 @@
+g++ main_algorithm.cpp -o main_algorithm.exe
+main_algorithm.exe
+
+1
+10
+17
+180
+14
+800
+9
+130
+7
+920
+4
+1000
+5
+300
+10
+720
+20
+400
+16
+400
+2
+880
