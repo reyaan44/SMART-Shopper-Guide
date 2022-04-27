@@ -1,6 +1,5 @@
 void dijkstra(vector<vector<vector<ll>>> &adj, vector<vector<ll>> &dis, vector<vector<string>> &path, ll curr)
 {
-    ll n = adj.size();
     priority_queue<vector<ll>, vector<vector<ll>>, greater<vector<ll>>> q1;
     q1.push({0,curr,-1});
     while(!q1.empty())
@@ -11,7 +10,7 @@ void dijkstra(vector<vector<vector<ll>>> &adj, vector<vector<ll>> &dis, vector<v
         q1.pop();
         if(dis[curr][node]!=LLONG_MAX) continue;
         if(par==-1) path[curr][curr] = to_string(curr);
-        else path[curr][node] = path[curr][par] + " -> " + to_string(node);
+        else path[curr][node] = path[curr][par] + "->" + to_string(node);
         dis[curr][node] = distance;
         for(ll i=0; i<adj[node].size(); i++)
         {

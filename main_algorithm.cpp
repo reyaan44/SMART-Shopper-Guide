@@ -12,7 +12,9 @@
 using namespace std;
 #include"input-file.cpp" // filename
 #include"dijkstra.cpp" // adjacency, distance, path, current start node
-#include"find_path.cpp"
+#include"find_path.cpp" // order, path, home
+#include"mst.cpp"   // adj, price, distance, path
+#include"preorder.cpp" // adj, a, par, order
 int main()
 {
     vector<string> input = readAndPrint("map.txt");
@@ -68,7 +70,10 @@ int main()
     cout<<endl;
     if(weather)
     {
-    	
+    	mst(adj, price, distance, home);
+        vector<ll> order;
+        preorder(adj, home, -1, order);
+        get_path(order, path, home);
     }
     else
     {
@@ -105,7 +110,10 @@ int main()
     	}
     	else
     	{
-
+            mst(adj, price, distance, home);
+            vector<ll> order;
+            preorder(adj, home, -1, order);
+            get_path(order, path, home);
     	}
     }
     timetaken;
