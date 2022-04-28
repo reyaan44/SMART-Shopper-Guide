@@ -75,7 +75,7 @@ int main()
         cin>>forward;
         if(!forward) 
             return 0;
-        cout<<"WE WILL HIGHLY RECOMMEND YOU TO CANCEL THE TRIPS TO THESE STORES DUE TO THE EXTREME WEATHER CONDITIONS.\n";
+        cout<<"WE WILL HIGHLY RECOMMEND YOU TO ONLY VISIT TO THESE STORES DUE TO THE EXTREME WEATHER CONDITIONS.\n";
         vector<pair<ll,ll>> stores;
         for(auto itr: price)
                 stores.pb({distance[home][itr.ff], itr.ff});
@@ -88,7 +88,7 @@ int main()
         }
         for(ll i=0; i<stores.size(); i++) 
             cout<<"STORE "<<stores[i].ss<<endl;
-        cout<<"Press 1 to Cancel these stores\nPress 0 to not canel these stores\n";
+        cout<<"Press 1 to visit these stores\nPress 0 to visit all the stores\n";
         cin>>forward;
         if(forward)
         {
